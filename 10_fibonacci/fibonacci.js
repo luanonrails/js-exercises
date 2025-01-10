@@ -3,12 +3,9 @@ const fibonacci = function(pos) {
     
     let current = 0;
     let next = 1;
-    let temp;
 
     for(let i = 0; i < pos; i++) {
-        temp = current + next;
-        current = next;
-        next = temp;
+        [current, next] = [next, current + next];
     }
     return current;
 }
