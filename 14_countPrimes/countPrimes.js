@@ -1,20 +1,20 @@
 const countPrimes = function(num) {
     if (num < 0) return "OOPS";
 
-    let primes = Array.from(
-        {length: num}, (value, index) => index + 1
-    );
+    let numbers = Array.from({length: num});
+    let counter = 0;
 
-    primes.shift(); // remove number 1
-    const limit = Math.sqrt(num);
-
-    for (let i = 0; primes[i] < limit; i++) {
-        primes = primes.filter(
-            number => number % primes[i] != 0 || number == primes[i]
-        );
+    for (let i = 2; i <= num; i++) {
+        if (numbers[i]) {
+            continue;
+        } 
+        
+        counter++;
+        for (let n = i * i; n <= num; n += i) {
+            numbers[n] = n;
+        }
     }
-
-    return primes.length;
+    return counter;
 }
 
 module.exports = countPrimes;
