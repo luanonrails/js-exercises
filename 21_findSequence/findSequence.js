@@ -1,4 +1,4 @@
-const findTheSequence = function(target) {
+const findSequence = function(target) {
     const find = function(start, history) {
         if (start == target) {
             return history;
@@ -15,4 +15,4 @@ const findTheSequence = function(target) {
     return find(1, "1");
 }
 
-module.exports = findTheSequence;
+module.exports = findSequence;
