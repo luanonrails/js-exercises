@@ -1,20 +1,18 @@
 const convert = function(s, numRows) {
     if (numRows == 1) return s;
-    const lines = Array
-    .from({length: numRows})
-    .map(l => []);
+    const lines = new Array(numRows).fill('');
 
     let index = 0;
     let i = 1;
 
     for (let c of s) {
-        lines[index].push(c);
+        lines[index] += c;
         index += i;
         if (index == numRows - 1) i = -1;
         else if (index == 0) i = 1;
     }
 
-    return lines.flat().join('');
+    return lines.join('');
 }
 
 module.exports = convert;
