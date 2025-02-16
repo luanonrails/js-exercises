@@ -7,7 +7,10 @@ describe('bubbleSort', () => {
     test('sort array with negative numbers', () => {
         expect(bubbleSort([-5, -2, 3, 1])).toEqual([-5, -2, 1, 3]);
     });
+    test('sort rational numbers', () => {
+        expect(bubbleSort([9.2, 5.6, 7.8, 8.9, 3])).toEqual([3, 5.6, 7.8, 8.9, 9.2]);
+    });
     test('sort character array', () => {
-        expect(bubbleSort(['Y', 'Z', 'A', 'C'])).toEqual(['A', 'C', 'Y', 'Z']);
+        expect(bubbleSort(['d', 'a', 'c', 'b'])).toEqual(['a', 'b', 'c', 'd']);
     });
 });
